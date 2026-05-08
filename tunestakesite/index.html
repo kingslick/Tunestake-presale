@@ -7,79 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Impact&family=Anton&display=swap');
-        
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-        
-        .degen-font {
-            font-family: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            letter-spacing: -2px;
-        }
-
-        .meme-red {
-            color: #ff2d55;
-        }
-
-        .chaos-bg {
-            background: #0a0a0a;
-            background-image: 
-                linear-gradient(rgba(255,45,85,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .section-title {
-            font-size: 4.2rem;
-            line-height: 0.9;
-            font-weight: 900;
-            letter-spacing: -4px;
-        }
-
-        .meme-button {
-            transition: transform 0.1s ease, box-shadow 0.1s ease;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-        
-        .meme-button:hover {
-            transform: scale(1.03);
-        }
-        
-        .meme-button:active {
-            transform: scale(0.97);
-        }
-
-        .degen-card {
-            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
-        }
-        
-        .degen-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
-        }
-
-        .viral-image {
-            border: 8px solid #111;
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
-            transition: transform 0.3s ease;
-        }
-        
-        .viral-image:hover {
-            transform: scale(1.015);
-        }
-
-        .warning-text {
-            animation: warning 2s infinite;
-        }
-
-        .fomo-bar {
-            background: linear-gradient(to right, #ff2d55, #00ff9d);
-            height: 14px;
-            border-radius: 9999px;
-            box-shadow: 0 0 20px #ff2d55;
-        }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .degen-font { font-family: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; letter-spacing: -2px; }
+        .chaos-bg { background: #0a0a0a; background-image: linear-gradient(rgba(255,45,85,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+        .meme-button { transition: transform 0.1s ease; font-weight: 900; letter-spacing: -1px; }
+        .meme-button:hover { transform: scale(1.03); }
+        .viral-image { border: 8px solid #111; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5); }
     </style>
 </head>
 <body class="bg-zinc-950 text-white chaos-bg">
@@ -87,140 +20,125 @@
     <!-- NAV -->
     <nav class="border-b border-white/10 bg-zinc-950/95 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-x-4">
-                <div class="flex items-center gap-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center">
-                        <i class="fa-solid fa-music text-zinc-950 text-3xl"></i>
-                    </div>
-                    <div>
-                        <span class="font-black text-4xl tracking-[-3px]">TuneStake</span>
-                    </div>
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-music text-zinc-950 text-3xl"></i>
                 </div>
-                <div class="hidden md:block px-4 py-1.5 rounded-2xl bg-red-500/10 text-red-400 text-xs font-black tracking-widest border border-red-500/20">
-                    PRE-SALE LIVE
-                </div>
+                <span class="font-black text-3xl tracking-[-2px]">TuneStake</span>
+                <span class="px-3 py-1 text-xs font-black bg-red-500/10 text-red-400 rounded-2xl">PRE-SALE LIVE</span>
             </div>
-            
             <div class="flex items-center gap-x-4">
-                <a href="#images" class="hidden md:block px-5 py-2 text-sm font-bold hover:text-red-400 transition-colors">THE MEMES</a>
-                <a href="#why" class="hidden md:block px-5 py-2 text-sm font-bold hover:text-red-400 transition-colors">WHY PRE-SALE</a>
-                
-                <button onclick="buyNow()" 
-                        class="meme-button bg-red-600 hover:bg-red-700 transition-all px-8 py-3 rounded-2xl font-black text-lg flex items-center gap-x-2 active:scale-95">
-                    <span>BUY PRE-SALE</span>
+                <a href="#how" class="px-5 py-2 text-sm font-bold hover:text-red-400">HOW IT WORKS</a>
+                <button onclick="buyNow()" class="meme-button bg-red-600 hover:bg-red-700 px-8 py-3 rounded-2xl font-black text-lg">
+                    BUY PRE-SALE
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <div class="max-w-7xl mx-auto px-6 pt-14 pb-12">
-        <div class="text-center max-w-5xl mx-auto">
-            <div class="inline-flex items-center gap-x-2 bg-red-500/10 text-red-400 px-5 py-2 rounded-3xl text-sm font-black tracking-[2px] mb-6 border border-red-500/20">
-                <i class="fa-solid fa-bomb"></i>
-                <span>PRE-SALE IS FUCKING LIVE</span>
-            </div>
-            
-            <h1 class="text-[92px] md:text-[120px] leading-[0.82] font-black tracking-[-7px] mb-4">
-                TUNESTAKE PRE-SALE<br>
-                <span class="text-red-500">IS LIVE, DUMBASS!</span>
-            </h1>
-            
-            <p class="text-3xl md:text-4xl font-black tracking-[-1.5px] mb-4">Only strong hands get in early.</p>
-            <p class="text-xl text-zinc-400 max-w-md mx-auto">Weak hands stay poor. Real ones get TuneStake access + RWA perks from day one.</p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                <button onclick="buyNow()" 
-                        class="meme-button group px-14 py-6 bg-red-600 hover:bg-red-700 text-2xl font-black rounded-3xl flex items-center justify-center gap-x-4 active:scale-[0.985] shadow-2xl shadow-red-500/30">
-                    <span>BUY TUNESTAKE PRE-SALE</span>
-                    <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition-transform"></i>
-                </button>
-                
-                <button onclick="document.getElementById('images').scrollIntoView({ behavior: 'smooth' })" 
-                        class="px-10 py-6 border-2 border-white/30 hover:bg-white/5 text-xl font-black rounded-3xl flex items-center justify-center gap-x-3 active:scale-[0.985]">
-                    <span>SEE THE MEMES</span>
-                </button>
-            </div>
-            
-            <div class="mt-8 text-xs tracking-[3px] text-white/40">6,842 DEGENs ALREADY IN • 14 MIN LEFT AT THIS PRICE</div>
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-10 text-center">
+        <div class="inline-flex items-center gap-x-2 bg-red-500/10 text-red-400 px-5 py-2 rounded-3xl text-sm font-black tracking-[2px] mb-6">
+            <i class="fa-solid fa-bomb"></i> PRE-SALE IS FUCKING LIVE
+        </div>
+        
+        <h1 class="text-[80px] md:text-[110px] leading-[0.82] font-black tracking-[-6px] mb-4">
+            TUNESTAKE PRE-SALE<br>
+            <span class="text-red-500">IS LIVE, DUMBASS!</span>
+        </h1>
+        <p class="text-2xl font-black tracking-[-1px] mb-8">Only strong hands get in early.</p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="buyNow()" class="meme-button px-14 py-6 bg-red-600 hover:bg-red-700 text-2xl font-black rounded-3xl flex items-center justify-center gap-x-4">
+                BUY TUNESTAKE PRE-SALE
+            </button>
+            <button onclick="document.getElementById('how').scrollIntoView({ behavior: 'smooth' })" 
+                    class="px-10 py-6 border-2 border-white/30 hover:bg-white/5 text-xl font-black rounded-3xl">
+                HOW THIS SHIT WORKS
+            </button>
         </div>
     </div>
 
-    <!-- FOMO BAR -->
-    <div class="bg-zinc-900 border-y border-white/10 py-3">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center gap-x-4 text-sm">
-                <div class="flex-1">
-                    <div class="h-3 bg-zinc-800 rounded-full overflow-hidden">
-                        <div class="fomo-bar w-[87%]" style="width: 87%"></div>
-                    </div>
+    <!-- HOW THIS SHIT WORKS -->
+    <div id="how" class="max-w-6xl mx-auto px-6 py-14">
+        <div class="text-center mb-10">
+            <div class="text-red-500 text-sm font-black tracking-[3px]">HOW THIS SHIT ACTUALLY WORKS</div>
+            <h2 class="text-5xl font-black tracking-[-2px] mt-2">Pre-Sale → Pump.fun Launch</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Pre-Sale -->
+            <div class="bg-zinc-900 border border-emerald-500/30 rounded-3xl p-8">
+                <div class="text-emerald-400 font-black text-xl mb-3">NOW → JUNE 7, 2026</div>
+                <div class="font-black text-4xl mb-5">PRE-SALE PHASE</div>
+                <ul class="space-y-3 text-lg">
+                    <li>Send 0.5 – 10 SOL to the wallet below</li>
+                    <li>Get <span class="text-emerald-400 font-bold">better price</span> than public launch</li>
+                    <li>Early access + strong hands perks</li>
+                </ul>
+            </div>
+
+            <!-- Pump.fun -->
+            <div class="bg-zinc-900 border border-orange-500/30 rounded-3xl p-8">
+                <div class="text-orange-400 font-black text-xl mb-3">JUNE 7, 2026</div>
+                <div class="font-black text-4xl mb-5">PUMP.FUN LAUNCH</div>
+                <ul class="space-y-3 text-lg">
+                    <li>Token launches on pump.fun for fair bonding curve</li>
+                    <li>Public price discovery</li>
+                    <li>After bonding curve → liquidity on Raydium</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center text-xl">
+            <span class="font-bold">Pre-sale = Better price.</span> Pump.fun = Fair public launch.<br>
+            <span class="text-red-400 font-bold">Strong hands get rewarded. Weak hands get left behind.</span>
+        </div>
+    </div>
+
+    <!-- UPDATED TOKEN CALCULATOR -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="text-center mb-8">
+            <div class="text-red-500 text-sm font-black tracking-[3px]">PRE-SALE vs PUBLIC</div>
+            <h3 class="text-4xl font-black tracking-[-1px]">Get better pricing during pre-sale</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Pre-Sale -->
+            <div class="bg-emerald-900/20 border border-emerald-500 rounded-3xl p-8">
+                <div class="text-emerald-400 font-black text-xl mb-2">PRE-SALE (NOW - JUNE 7)</div>
+                <div class="text-5xl font-black mb-6">Better Rate</div>
+                <div class="space-y-4 text-lg">
+                    <div>0.5 SOL → <span class="font-bold">~42,000 $BEATDN</span></div>
+                    <div>1 SOL → <span class="font-bold">~85,000 $BEATDN</span></div>
+                    <div>5 SOL → <span class="font-bold">~435,000 $BEATDN</span></div>
+                    <div>10 SOL → <span class="font-bold">~880,000 $BEATDN</span></div>
                 </div>
-                <div class="font-mono text-xs whitespace-nowrap">
-                    <span class="font-bold text-emerald-400">87%</span> FILLED
-                </div>
+            </div>
+
+            <!-- Public -->
+            <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 opacity-80">
+                <div class="text-orange-400 font-black text-xl mb-2">PUBLIC (After June 7)</div>
+                <div class="text-5xl font-black mb-6">Pump.fun Price</div>
+                <div class="text-xl">Higher price on pump.fun bonding curve.<br>
+                Pre-sale buyers get in cheaper.</div>
             </div>
         </div>
     </div>
 
-    <!-- BUY RANGE + TOKEN CALCULATOR -->
-    <div class="max-w-7xl mx-auto px-6 pt-8">
-        <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-y-6 mb-8">
-                <div>
-                    <div class="font-black text-3xl">How many $BEATDN do you get?</div>
-                    <div class="text-emerald-400 font-bold mt-1">Current pre-sale rate (better than public curve)</div>
-                </div>
-                <div class="text-right">
-                    <div class="text-xs text-white/60">Min / Max per wallet</div>
-                    <div class="font-black text-2xl text-emerald-400">0.5 SOL — 10 SOL</div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-zinc-950 border border-white/10 rounded-2xl p-5">
-                    <div class="text-xs text-white/50">0.5 SOL</div>
-                    <div class="text-4xl font-black tabular-nums mt-1">~42,000</div>
-                    <div class="text-emerald-400 text-sm">$BEATDN</div>
-                </div>
-                <div class="bg-zinc-950 border border-white/10 rounded-2xl p-5">
-                    <div class="text-xs text-white/50">1 SOL</div>
-                    <div class="text-4xl font-black tabular-nums mt-1">~85,000</div>
-                    <div class="text-emerald-400 text-sm">$BEATDN</div>
-                </div>
-                <div class="bg-zinc-950 border border-white/10 rounded-2xl p-5">
-                    <div class="text-xs text-white/50">5 SOL</div>
-                    <div class="text-4xl font-black tabular-nums mt-1">~435,000</div>
-                    <div class="text-emerald-400 text-sm">$BEATDN</div>
-                </div>
-                <div class="bg-zinc-950 border border-white/10 rounded-2xl p-5">
-                    <div class="text-xs text-white/50">10 SOL</div>
-                    <div class="text-4xl font-black tabular-nums mt-1">~880,000</div>
-                    <div class="text-emerald-400 text-sm">$BEATDN</div>
-                </div>
-            </div>
-
-            <div class="mt-6 text-xs text-white/50 text-center">
-                Numbers are approximate based on current bonding curve. Earlier buyers get better rates. Price only goes up after pre-sale.
-            </div>
-        </div>
-    </div>
-
-    <!-- PRE-SALE WALLET SECTION (NEW) -->
-    <div class="max-w-7xl mx-auto px-6 py-12">
+    <!-- WALLET SECTION -->
+    <div class="max-w-5xl mx-auto px-6 py-12">
         <div class="bg-red-600/10 border-4 border-red-500 rounded-3xl p-10 text-center">
             <div class="inline-flex items-center gap-x-3 bg-red-600 text-white px-6 py-2 rounded-2xl font-black text-lg mb-6">
-                <i class="fa-solid fa-wallet"></i>
-                SEND SOL TO PRE-SALE WALLET
+                <i class="fa-solid fa-wallet"></i> SEND SOL TO PRE-SALE WALLET
             </div>
             
             <div class="font-mono text-2xl md:text-3xl bg-zinc-900 p-5 rounded-2xl border border-white/20 mb-6 break-all">
                 7ujVqXyxMMqGBcmjTZtsV9ecfdUY2pGCM567YstVs8yz
             </div>
             
-            <button onclick="copyWallet()" 
-                    class="meme-button bg-white text-red-600 hover:bg-red-100 px-10 py-5 rounded-3xl font-black text-xl flex items-center gap-x-3 mx-auto">
-                <i class="fa-solid fa-copy"></i>
-                COPY WALLET • SEND YOUR SOL NOW, DUMBASS!
+            <button onclick="copyWallet()" class="meme-button bg-white text-red-600 hover:bg-red-100 px-10 py-5 rounded-3xl font-black text-xl flex items-center gap-x-3 mx-auto">
+                <i class="fa-solid fa-copy"></i> COPY WALLET • SEND YOUR SOL NOW, DUMBASS!
             </button>
             
             <div class="mt-6 text-sm text-white/70">
@@ -230,99 +148,74 @@
         </div>
     </div>
 
-    <!-- WHY PRE-SALE -->
-    <div id="why" class="max-w-7xl mx-auto px-6 py-16">
-        <div class="text-center mb-12">
-            <div class="text-red-500 text-sm font-black tracking-[4px]">WHY THE FUCK SHOULD YOU CARE</div>
-            <h2 class="text-6xl font-black tracking-[-3px] mt-2">TuneStake Pre-Sale is actually different.</h2>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="degen-card bg-zinc-900 border border-white/10 rounded-3xl p-8">
-                <div class="text-5xl mb-6">01</div>
-                <div class="font-black text-3xl mb-4">Early Access to TuneStake</div>
-                <p class="text-zinc-400">Pre-sale buyers get priority access + bonus staking rewards when the app launches. Normies wait. You don't.</p>
-            </div>
-            
-            <div class="degen-card bg-zinc-900 border border-white/10 rounded-3xl p-8">
-                <div class="text-5xl mb-6">02</div>
-                <div class="font-black text-3xl mb-4">RWA Perks from Day 1</div>
-                <p class="text-zinc-400">"BROKEN AND ALONE" album revenue share goes to pre-sale buyers first. Real utility. Real money. Not just memes.</p>
-            </div>
-            
-            <div class="degen-card bg-zinc-900 border border-white/10 rounded-3xl p-8">
-                <div class="text-5xl mb-6">03</div>
-                <div class="font-black text-3xl mb-4">Better Price. Period.</div>
-                <p class="text-zinc-400">Pre-sale price is significantly lower than public. After this, price only goes up. Simple as that.</p>
-            </div>
-        </div>
+    <!-- SIMPLE ALLOCATION -->
+    <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-white/70">
+        <strong>Token Allocation:</strong><br>
+        Pre-sale buyers + early supporters → Big chunk at better price<br>
+        Team / Development → Locked / vested<br>
+        Public launch on pump.fun → Remaining supply
     </div>
 
-    <!-- THE IMAGES / MEMES -->
-    <div id="images" class="max-w-7xl mx-auto px-6 pb-16">
-        <div class="flex items-end justify-between mb-8">
-            <div>
-                <div class="text-red-500 text-sm font-black tracking-[3px]">THE MEMES THAT MATTER</div>
-                <div class="text-6xl font-black tracking-[-3px]">These are the ones<br>that will 100x.</div>
-            </div>
-            <div class="hidden md:block text-right text-sm text-white/50 max-w-[220px]">
-                Save these. Post these. Raid with these.<br>
-                This is how we win.
-            </div>
+    <!-- FINAL CTA -->
+    <div class="max-w-4xl mx-auto px-6 py-16 text-center">
+        <div class="text-[60px] leading-[0.9] font-black tracking-[-3px] mb-6">
+            STOP BEING A<br> 
+            <span class="text-red-500">DUMBASS.</span>
         </div>
+        <p class="text-2xl text-zinc-400 mb-10">Pre-sale is open for 30 days.<br>Then we hit pump.fun.</p>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Image 1 -->
-            <div>
-                <img src="imagine_images/1Hdbb.jpg" alt="PRE-SALE IS LIVE, DUMBASS!" class="viral-image w-full rounded-3xl shadow-2xl">
-                <div class="mt-4 px-1">
-                    <div class="font-black text-xl">PRE-SALE IS LIVE, DUMBASS!</div>
-                    <div class="text-xs text-white/50">The main one. Post this everywhere.</div>
-                </div>
-            </div>
-            
-            <!-- Image 2 -->
-            <div>
-                <img src="imagine_images/Tg11A.jpg" alt="Pre-sale = Early Access" class="viral-image w-full rounded-3xl shadow-2xl">
-                <div class="mt-4 px-1">
-                    <div class="font-black text-xl">PRE-SALE = EARLY ACCESS</div>
-                    <div class="text-xs text-white/50">Perfect for explaining the utility angle.</div>
-                </div>
-            </div>
-            
-            <!-- Image 3 -->
-            <div>
-                <img src="imagine_images/Po85t.jpg" alt="Strong Hands Only" class="viral-image w-full rounded-3xl shadow-2xl">
-                <div class="mt-4 px-1">
-                    <div class="font-black text-xl">STRONG HANDS ONLY</div>
-                    <div class="text-xs text-white/50">Use this to filter out the weak ones.</div>
-                </div>
-            </div>
-        </div>
+        <button onclick="buyNow()" class="meme-button px-16 py-7 text-3xl font-black bg-red-600 hover:bg-red-700 rounded-3xl">
+            BUY $BEATDN PRE-SALE
+        </button>
     </div>
-
-    <!-- WHAT YOU ACTUALLY GET + FINAL CTA + FOOTER (unchanged) -->
-    <!-- ... (the rest of your original code remains exactly the same) ... -->
 
     <script>
-        function buyNow() {
-            // your original modal code...
-        }
-        
-        function fakeBuy(element) {
-            // your original fakeBuy code...
-        }
-        
         function copyWallet() {
-            navigator.clipboard.writeText('7ujVqXyxMMqGBcmjTZtsV9ecfdUY2pGCM567YstVs8yz').then(() => {
-                const btn = event.currentTarget;
-                const originalText = btn.innerHTML;
-                btn.innerHTML = `<i class="fa-solid fa-check"></i> COPIED, DUMBASS!`;
-                setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+            navigator.clipboard.writeText("7ujVqXyxMMqGBcmjTZtsV9ecfdUY2pGCM567YstVs8yz").then(() => {
+                alert("✅ WALLET COPIED! SEND YOUR SOL NOW, DUMBASS!");
             });
         }
         
-        // rest of your original script...
+        function buyNow() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/90 flex items-center justify-center z-[200] p-6';
+            modal.innerHTML = `
+                <div class="max-w-md w-full bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center">
+                    <div class="text-red-500 text-6xl mb-4"><i class="fa-solid fa-skull"></i></div>
+                    <div class="font-black text-4xl tracking-[-2px] mb-2">YOU SURE YOU'RE READY?</div>
+                    <div class="text-zinc-400 mb-8">This isn't for paper hands.</div>
+                    
+                    <div class="space-y-3">
+                        <button onclick="fakeBuy(this)" class="w-full py-5 bg-red-600 hover:bg-red-700 font-black text-xl rounded-3xl">
+                            I AM A STRONG HAND. BUY NOW.
+                        </button>
+                        <button onclick="this.closest('.fixed').remove()" class="w-full py-4 text-sm text-white/60 hover:text-white">
+                            Nevermind, I'm still a dumbass
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function fakeBuy(element) {
+            element.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> PROCESSING YOUR DEGEN BAG...`;
+            element.disabled = true;
+            
+            setTimeout(() => {
+                element.closest('.fixed').remove();
+                const success = document.createElement('div');
+                success.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-500 text-zinc-950 px-10 py-5 rounded-3xl font-black text-xl flex items-center gap-x-3 shadow-2xl z-[300]';
+                success.innerHTML = `<i class="fa-solid fa-check-circle text-3xl"></i> CONGRATS. YOU'RE NO LONGER A DUMBASS.`;
+                document.body.appendChild(success);
+                
+                setTimeout(() => {
+                    success.style.transition = 'all 0.4s';
+                    success.style.opacity = '0';
+                    setTimeout(() => success.remove(), 400);
+                }, 3800);
+            }, 2200);
+        }
     </script>
 </body>
 </html>
