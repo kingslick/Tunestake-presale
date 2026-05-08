@@ -25,9 +25,15 @@
                 <span class="font-black text-3xl tracking-[-2px]">TuneStake</span>
                 <span class="px-3 py-1 text-xs font-black bg-red-500/10 text-red-400 rounded-2xl">PRE-SALE LIVE</span>
             </div>
-            <div class="flex items-center gap-x-4">
+            <div class="flex items-center gap-x-6">
                 <a href="#how" class="px-5 py-2 text-sm font-bold hover:text-red-400">HOW IT WORKS</a>
                 <a href="#whitepaper" class="px-5 py-2 text-sm font-bold hover:text-red-400">WHITEPAPER</a>
+                <a href="https://x.com/tunestake420" target="_blank" class="flex items-center gap-x-1 hover:text-red-400">
+                    <i class="fa-brands fa-x-twitter"></i> @tunestake420
+                </a>
+                <a href="https://t.me/BEATDNonsol" target="_blank" class="flex items-center gap-x-1 hover:text-red-400">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
                 <button onclick="buyNow()" class="meme-button bg-red-600 hover:bg-red-700 px-8 py-3 rounded-2xl font-black text-lg">BUY PRE-SALE</button>
             </div>
         </div>
@@ -199,14 +205,13 @@
         <p class="text-xs text-white/50 mt-6">You must have sent SOL during pre-sale to be eligible.</p>
     </div>
 
-    <!-- WHITEPAPER SECTION -->
+    <!-- WHITEPAPER -->
     <div id="whitepaper" class="max-w-6xl mx-auto px-6 py-16">
         <div class="text-center mb-12">
             <div class="text-red-500 text-sm font-black tracking-[3px]">TUNESTAKE WHITEPAPER</div>
             <h2 class="text-5xl font-black tracking-[-2px]">Content = Users = Both Paid for Life</h2>
             <p class="text-xl text-white/70 mt-4 max-w-2xl mx-auto">The first music-powered, RWA-backed staking ecosystem on Solana.</p>
         </div>
-
         <div class="prose prose-invert max-w-none">
             <h3 class="text-3xl font-black">1. Executive Summary</h3>
             <p>TuneStake is a revolutionary music + finance platform where <strong>content creators and fans both get paid for life</strong>.</p>
@@ -231,25 +236,24 @@
                 <li>Deflationary mechanics + strong hands rewards</li>
                 <li>Pre-sale buyers get in at a significantly lower price</li>
             </ul>
+        </div>
+    </div>
 
-            <div class="mt-12 text-center">
-                <button onclick="alert('Full whitepaper PDF coming soon — this is the TL;DR for degen eyes 👀\n\nTuneStake = Music + Staking + RWA on Solana.\n$BEATDN is the key. Strong hands only.')" 
-                        class="meme-button px-14 py-6 bg-white text-red-600 text-2xl font-black rounded-3xl flex items-center gap-x-4 mx-auto">
-                    <i class="fa-solid fa-file-lines"></i> READ FULL WHITEPAPER (SOON)
-                </button>
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-8 text-xs text-center text-white/40 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>TuneStake + $BEATDN • Pre-sale ends June 7, 2026</div>
+            <div class="flex items-center gap-x-6">
+                <a href="https://x.com/tunestake420" target="_blank" class="flex items-center gap-x-2 hover:text-white">
+                    <i class="fa-brands fa-x-twitter"></i> @tunestake420
+                </a>
+                <a href="https://t.me/BEATDNonsol" target="_blank" class="flex items-center gap-x-2 hover:text-white">
+                    <i class="fa-brands fa-telegram"></i> t.me/BEATDNonsol
+                </a>
             </div>
+            <div>High risk. High reward. Only put in what you can afford to lose.</div>
         </div>
-    </div>
-
-    <!-- FINAL CTA -->
-    <div class="max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="text-[60px] leading-[0.9] font-black tracking-[-3px] mb-6">
-            STOP BEING A<br> 
-            <span class="text-red-500">DUMBASS.</span>
-        </div>
-        <p class="text-2xl text-zinc-400 mb-10">Pre-sale is open for 30 days.<br>Then we hit pump.fun.</p>
-        <button onclick="buyNow()" class="meme-button px-16 py-7 text-3xl font-black bg-red-600 hover:bg-red-700 rounded-3xl">BUY $BEATDN PRE-SALE</button>
-    </div>
+    </footer>
 
     <script>
         function updateCountdown() {
