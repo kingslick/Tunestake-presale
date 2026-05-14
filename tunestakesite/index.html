@@ -7,10 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
-        tailwind.config = {
-            content: ["./**/*.html"],
-            theme: { extend: {} }
-        }
+        tailwind.config = { content: ["./**/*.html"] }
     </script>
     <style>
         body {
@@ -121,7 +118,25 @@
                         <div class="text-sm text-emerald-400">MAXIMUM</div>
                     </div>
                 </div>
-                <p class="text-sm text-white/60 mt-6">Rate: <strong>84,000 $TUNE per 1 SOL</strong> • Much better than public launch</p>
+                <p class="text-sm text-white/60 mt-6">Rate: <strong>84,000 $TUNE per 1 SOL</strong></p>
+            </div>
+        </div>
+
+        <!-- PRE-SALE WALLET -->
+        <div class="max-w-5xl mx-auto px-6 pb-12">
+            <div class="bg-red-600/10 border-4 border-red-500 rounded-3xl p-10 text-center">
+                <div class="inline-flex items-center gap-x-3 bg-red-600 text-white px-6 py-2 rounded-2xl font-black text-lg mb-6">
+                    <i class="fa-solid fa-wallet"></i> SEND SOL TO PRE-SALE WALLET
+                </div>
+                <div class="font-mono text-2xl md:text-3xl bg-zinc-900 p-5 rounded-2xl border border-white/20 mb-6 break-all">
+                    7ujVqXyxMMqGBcmjTZtsV9ecfdUY2pGCM567YstVs8yz
+                </div>
+                <button onclick="copyWallet()" class="meme-button bg-white text-red-600 hover:bg-red-100 px-10 py-5 rounded-3xl font-black text-xl flex items-center gap-x-3 mx-auto">
+                    <i class="fa-solid fa-copy"></i> COPY WALLET
+                </button>
+                <div class="mt-6 text-sm text-white/70">
+                    0.5 SOL minimum — 10 SOL maximum per wallet
+                </div>
             </div>
         </div>
 
@@ -139,16 +154,15 @@
                         <div class="flex justify-between"><span>Liquidity</span><span class="font-bold">20%</span></div>
                         <div class="flex justify-between"><span>RWA & Creator Rewards</span><span class="font-bold">20%</span></div>
                         <div class="flex justify-between"><span>Staking Rewards</span><span class="font-bold">15%</span></div>
-                        <div class="flex justify-between"><span>Team (3mo cliff + 12mo vest)</span><span class="font-bold">10%</span></div>
-                        <div class="flex justify-between"><span>Marketing & DAO Treasury</span><span class="font-bold">10%</span></div>
+                        <div class="flex justify-between"><span>Team</span><span class="font-bold">10%</span></div>
+                        <div class="flex justify-between"><span>Marketing & DAO</span><span class="font-bold">10%</span></div>
                     </div>
                 </div>
                 <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8">
                     <h3 class="text-2xl font-black mb-6 text-center">Revenue Share</h3>
                     <div class="space-y-4 text-sm">
                         <div class="flex justify-between"><span>Platform Fees</span><span class="font-bold">18% Company • 42% Creators • 40% Stakers</span></div>
-                        <div class="flex justify-between"><span>RWA Content Revenue</span><span class="font-bold">12% Company • 50% Creators • 38% Stakers</span></div>
-                        <div class="flex justify-between"><span>NFT / Secondary Sales</span><span class="font-bold">8% Company • 62% Creators • 30% Stakers</span></div>
+                        <div class="flex justify-between"><span>RWA Revenue</span><span class="font-bold">12% Company • 50% Creators • 38% Stakers</span></div>
                     </div>
                 </div>
             </div>
@@ -160,7 +174,7 @@
                 STOP BEING A<br>
                 <span class="text-red-500">DUMBASS.</span>
             </div>
-            <p class="text-2xl text-zinc-400 mb-10">Only 250 Million $TUNE available in pre-sale.<br>Then it's gone forever.</p>
+            <p class="text-2xl text-zinc-400 mb-10">Only 250 Million $TUNE available in pre-sale.</p>
             <button onclick="buyNow()" class="meme-button px-16 py-7 text-3xl font-black bg-red-600 hover:bg-red-700 rounded-3xl">BUY $TUNE PRE-SALE</button>
         </div>
 
@@ -209,10 +223,10 @@
             const el = document.getElementById("tokens-remaining");
             if (!el) return;
             setInterval(() => {
-                remaining -= Math.floor(Math.random() * 180) + 50;
+                remaining -= Math.floor(Math.random() * 220) + 60;
                 if (remaining < 240000000) remaining = 240000000;
                 el.innerHTML = remaining.toLocaleString();
-            }, 4000);
+            }, 3500);
         }
         updateTokensRemaining();
 
